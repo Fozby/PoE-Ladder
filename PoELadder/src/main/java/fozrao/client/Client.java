@@ -1,7 +1,8 @@
 package fozrao.client;
 
 import fozrao.entities.*;
-import fozrao.entities.ResponseLadder.Entry;
+import fozrao.entities.ladder.Response;
+import fozrao.entities.ladder.Entry;
 
 import org.springframework.web.client.RestTemplate;
 
@@ -9,7 +10,7 @@ public class Client {
 
 	public static void main(String[] args) {
 		RestTemplate restTemplate = new RestTemplate();
-		ResponseLadder ladder = restTemplate.getForObject("http://api.pathofexile.com/ladders/Hardcore Essence?offset=0&limit=10", ResponseLadder.class);
+		Response ladder = restTemplate.getForObject("http://api.pathofexile.com/ladders/Hardcore Essence?offset=0&limit=10", Response.class);
 		
 		System.out.println(ladder.toString());
 		
